@@ -1,33 +1,75 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tugasku</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="logo.png" />
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-
   <!-- Tombol ganti tema -->
-  <button class="theme-toggle"><i class="fas fa-sun"></i></button>
+  <button class="theme-toggle" aria-label="Ganti Tema"><i class="fas fa-sun"></i></button>
 
   <div class="box">
     <div class="login active">
       <h1 class="login-title"><i class="fas fa-tasks"></i> My To-Do List</h1>
 
       <div class="loginBx">
-        <!-- ✅ Inline style dihapus -->
+
+        <!-- Statistik -->
+        <div class="stats">
+          <p>Total: <span id="totalTasks">0</span></p>
+          <p>Selesai: <span id="completedTasks">0</span></p>
+          <p>Belum: <span id="pendingTasks">0</span></p>
+        </div>
+
+        <!-- Kontrol pencarian, filter, sortir -->
+        <div class="controls">
+          <input type="text" id="searchInput" placeholder="Cari tugas..." aria-label="Cari tugas" />
+          <select id="filterSelect" aria-label="Filter status">
+            <option value="all">Semua Status</option>
+            <option value="completed">Selesai</option>
+            <option value="pending">Belum Selesai</option>
+          </select>
+          <select id="categoryFilter" aria-label="Filter kategori">
+            <option value="all">Semua Kategori</option>
+            <option value="Kerja">Kerja</option>
+            <option value="Kuliah">Kuliah</option>
+            <option value="Pribadi">Pribadi</option>
+          </select>
+          <select id="sortSelect" aria-label="Urutkan">
+            <option value="default">Urutkan: Default</option>
+            <option value="deadline">Urutkan: Deadline</option>
+            <option value="alpha">Urutkan: Abjad</option>
+            <option value="status">Urutkan: Status</option>
+          </select>
+        </div>
+
+        <!-- Progress bar -->
+        <div class="progress-container" aria-label="Progress tugas">
+          <div id="progressBar"></div>
+        </div>
+
+        <!-- Input tambah tugas -->
         <div class="input-group">
-          <input type="text" id="taskInput" placeholder="Tambah tugas...">
+          <input type="text" id="taskInput" placeholder="Tambah tugas..." aria-label="Teks tugas" />
+          <select id="categorySelect" aria-label="Pilih kategori">
+            <option value="Kerja">Kerja</option>
+            <option value="Kuliah">Kuliah</option>
+            <option value="Pribadi">Pribadi</option>
+          </select>
+          <input type="date" id="deadlineInput" aria-label="Deadline" />
           <button id="addBtn">Tambah</button>
         </div>
-        <ul id="taskList"></ul>
+
+        <ul id="taskList" aria-live="polite"></ul>
       </div>
     </div>
   </div>
 
   <script src="script.js"></script>
+  <div id="toast-container"></div>
 </body>
 </html>
