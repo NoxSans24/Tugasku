@@ -2,7 +2,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
 @import url("https://use.fontawesome.com/releases/v6.5.1/css/all.css");
 
-* { box-sizing: border-box; margin: 0; padding: 0; font-family: "Poppins", sans-serif; }
+* { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+  font-family: "Poppins", sans-serif; 
+}
 
 body {
   background: #0d0d0d;
@@ -16,7 +21,9 @@ body {
 
 .box {
   position: relative;
-  width: 400px;
+  width: 100%;              /* responsif */
+  max-width: 400px;         /* batasi ukuran maksimum */
+  margin: 0 auto;
   border-radius: 25px;
   background: #111;
   padding: 30px;
@@ -148,3 +155,25 @@ body.light li .delBtn { background: #00bfff; color: #fff; box-shadow: 0 0 5px #0
 body.light li .toggleBtn:hover { background: #00bfff; box-shadow: 0 0 5px #00bfff inset;}
 body.light li .delBtn:hover { background: #00bfff; box-shadow: 0 0 5px #00bfff inset;}
 body.light li.completed {color:#111;border-color: #111;box-shadow: 0 0 10px #111 inset;}
+
+/* 🔹 Responsif untuk layar kecil */
+@media (max-width: 480px) {
+  .box {
+    padding: 20px;
+  }
+
+  #taskInput {
+    font-size: 14px;
+    padding: 8px 15px;
+  }
+
+  #addBtn {
+    font-size: 14px;
+    padding: 8px 15px;
+  }
+
+  li {
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+}
