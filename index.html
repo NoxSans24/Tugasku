@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tugasku</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="logo.png">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- Tombol ganti tema -->
+  <button class="theme-toggle"><i class="fas fa-sun"></i></button>
+
+  <div class="box">
+    <div class="login active">
+      <h1 class="login-title"><i class="fas fa-tasks"></i> My To-Do List</h1>
+
+      <div class="loginBx">
+        <div class="input-group" style="display:flex; gap:10px; width:100%;">
+          <input type="text" id="taskInput" placeholder="Tambah tugas...">
+          <button id="addBtn">Tambah</button>
+        </div>
+        <ul id="taskList"></ul>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

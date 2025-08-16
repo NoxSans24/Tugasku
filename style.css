@@ -1,0 +1,150 @@
+/* Import font & icon */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+@import url("https://use.fontawesome.com/releases/v6.5.1/css/all.css");
+
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: "Poppins", sans-serif; }
+
+body {
+  background: #0d0d0d;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.box {
+  position: relative;
+  width: 400px;
+  border-radius: 25px;
+  background: #111;
+  padding: 30px;
+  box-shadow: 0 0 20px #ff0f5b, 0 0 40px #ff0f5b inset;
+}
+
+.login-title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ff0f5b;
+  text-shadow: 0 0 10px #ff0f5b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.login-title i { color: #ff0f5b; }
+
+#taskInput {
+  flex: 1;
+  padding: 10px 20px;
+  border-radius: 50px;
+  border: 2px solid #ff0f5b;
+  outline: none;
+  background: #111;
+  color: #ff0f5b;
+  box-shadow: 0 0 5px #ff0f5b inset;
+}
+
+#taskInput::placeholder { color: #ff0f5b; }
+
+#addBtn {
+  padding: 10px 20px;
+  border-radius: 50px;
+  border: 2px solid #ff0f5b;
+  background: #111;
+  color: #ff0f5b;
+  cursor: pointer;
+  box-shadow: 0 0 5px #ff0f5b;
+}
+
+#addBtn:hover {
+  background: #ff0f5b;
+  color: #111;
+  box-shadow: 0 0 20px #ff0f5b;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 20px;
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  border: 1px solid #ff0f5b;
+  box-shadow: 0 0 10px #ff0f5b inset;
+  transition: 0.3s;
+  color:#ff0f5b
+}
+
+li.completed {
+  text-decoration: line-through;
+  color: #888;
+  border-color: #888;
+  box-shadow: 0 0 10px #888 inset;
+}
+
+li button {
+  border: none;
+  border-radius: 15px;
+  padding: 5px 10px;
+  cursor: pointer;
+  box-shadow: 0 0 5px #ff0f5b;
+}
+
+li .toggleBtn { background: #ff0f5b; color: #111; margin-right: 5px; }
+li .toggleBtn:hover { background: #ff0f5b; }
+
+li .delBtn { background: #ff0f5b; color: #111; }
+li .delBtn:hover { background: #ff3366; }
+
+/* Tombol toggle tema */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: 2px solid #ff0f5b;
+  border-radius: 50%;
+  font-size: 1.2em;
+  padding: 8px 12px;
+  cursor: pointer;
+  color: #ff0f5b;
+  z-index: 999;
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background: rgba(0, 240, 255, 0.1);
+}
+
+/* Mode terang */
+body.light {
+  background: #f2f2f2;
+  color: #f2f2f2;
+}
+
+body.light .box { background: #fff; box-shadow: 0 0 20px #00bfff inset; }
+body.light #taskInput { background: #f5f5f5; color: #00bfff; border-color: #00bfff; }
+body.light #addBtn { background:#f5f5f5;color: #00bfff; border-color: #00bfff;box-shadow: 0 0 5px #00bfff inset;}
+body.light li { border-color: #00bfff; box-shadow: 0 0 10px #00bfff inset; color:#00bfff}
+body.light .theme-toggle {color: #00bfff ;border: 2px solid #00bfff;}
+body.light .login-title i { color: #00bfff; text-shadow: 0 0 10px #00bfff;}
+body.light #taskInput {color: #00bfff;box-shadow: 0 0 5px #00bfff inset; border: 2px solid #00bfff;}
+body.light #taskInput::placeholder { color: #00bfff; }
+body.light .login-title{color: #00bfff;text-shadow: 0 0 10px #00bfff;}
+body.light li .toggleBtn { background: #00bfff; color: #f2f2f2; margin-right: 5px;box-shadow: 0 0 5px #00bfff inset; }
+body.light li .delBtn { background: #00bfff; color: #fff; box-shadow: 0 0 5px #00bfff inset;}
+body.light li .toggleBtn:hover { background: #00bfff; box-shadow: 0 0 5px #00bfff inset;}
+body.light li .delBtn:hover { background: #00bfff; box-shadow: 0 0 5px #00bfff inset;}
+body.light li.completed {color:#111;border-color: #111;box-shadow: 0 0 10px #111 inset;}
