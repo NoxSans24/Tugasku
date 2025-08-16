@@ -21,8 +21,8 @@ body {
 
 .box {
   position: relative;
-  width: 100%;              /* responsif */
-  max-width: 400px;         /* batasi ukuran maksimum */
+  width: 100%;              /* fleksibel */
+  max-width: 500px;         /* naikkan sedikit biar lega di tablet */
   margin: 0 auto;
   border-radius: 25px;
   background: #111;
@@ -39,6 +39,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 10px;
+  flex-wrap: wrap; /* biar kalau kepanjangan turun */
 }
 
 .login-title i { color: #ff0f5b; }
@@ -52,6 +53,7 @@ body {
   background: #111;
   color: #ff0f5b;
   box-shadow: 0 0 5px #ff0f5b inset;
+  min-width: 0; /* biar input shrink di layar kecil */
 }
 
 #taskInput::placeholder { color: #ff0f5b; }
@@ -64,6 +66,7 @@ body {
   color: #ff0f5b;
   cursor: pointer;
   box-shadow: 0 0 5px #ff0f5b;
+  flex-shrink: 0;
 }
 
 #addBtn:hover {
@@ -90,7 +93,8 @@ li {
   border: 1px solid #ff0f5b;
   box-shadow: 0 0 10px #ff0f5b inset;
   transition: 0.3s;
-  color:#ff0f5b
+  color:#ff0f5b;
+  word-break: break-word; /* biar teks panjang tetap muat */
 }
 
 li.completed {
@@ -156,24 +160,46 @@ body.light li .toggleBtn:hover { background: #00bfff; box-shadow: 0 0 5px #00bff
 body.light li .delBtn:hover { background: #00bfff; box-shadow: 0 0 5px #00bfff inset;}
 body.light li.completed {color:#111;border-color: #111;box-shadow: 0 0 10px #111 inset;}
 
-/* 🔹 Responsif untuk layar kecil */
+/* 🔹 Responsif */
+
+/* HP kecil (≤480px) */
 @media (max-width: 480px) {
   .box {
     padding: 20px;
   }
-
-  #taskInput {
+  #taskInput, #addBtn {
     font-size: 14px;
-    padding: 8px 15px;
+    padding: 8px 12px;
   }
-
-  #addBtn {
-    font-size: 14px;
-    padding: 8px 15px;
-  }
-
   li {
     font-size: 14px;
     padding: 8px 10px;
+  }
+}
+
+/* Tablet (481px – 768px) */
+@media (max-width: 768px) and (min-width: 481px) {
+  .box {
+    max-width: 600px;
+    padding: 25px;
+  }
+  #taskInput, #addBtn {
+    font-size: 15px;
+  }
+  li {
+    font-size: 15px;
+  }
+}
+
+/* Desktop besar (≥1200px) */
+@media (min-width: 1200px) {
+  .box {
+    max-width: 600px;  /* tetap compact */
+  }
+  #taskInput, #addBtn {
+    font-size: 16px;
+  }
+  li {
+    font-size: 16px;
   }
 }
