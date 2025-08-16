@@ -21,8 +21,8 @@ body {
 
 .box {
   position: relative;
-  width: 100%;              /* fleksibel */
-  max-width: 500px;         /* naikkan sedikit biar lega di tablet */
+  width: 100%;              
+  max-width: 500px;         
   margin: 0 auto;
   border-radius: 25px;
   background: #111;
@@ -39,13 +39,22 @@ body {
   justify-content: center;
   align-items: center;
   gap: 10px;
-  flex-wrap: wrap; /* biar kalau kepanjangan turun */
+  flex-wrap: wrap;
 }
 
 .login-title i { color: #ff0f5b; }
 
+/* 🔹 Input + Tombol */
+.input-group {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  flex-wrap: wrap;       /* biar responsif */
+}
+
 #taskInput {
   flex: 1;
+  min-width: 0;
   padding: 10px 20px;
   border-radius: 50px;
   border: 2px solid #ff0f5b;
@@ -53,7 +62,6 @@ body {
   background: #111;
   color: #ff0f5b;
   box-shadow: 0 0 5px #ff0f5b inset;
-  min-width: 0; /* biar input shrink di layar kecil */
 }
 
 #taskInput::placeholder { color: #ff0f5b; }
@@ -66,7 +74,7 @@ body {
   color: #ff0f5b;
   cursor: pointer;
   box-shadow: 0 0 5px #ff0f5b;
-  flex-shrink: 0;
+  flex-shrink: 0;        /* biar tombol nggak hancur */
 }
 
 #addBtn:hover {
@@ -75,6 +83,7 @@ body {
   box-shadow: 0 0 20px #ff0f5b;
 }
 
+/* 🔹 List Tugas */
 ul {
   list-style: none;
   padding-left: 0;
@@ -94,7 +103,7 @@ li {
   box-shadow: 0 0 10px #ff0f5b inset;
   transition: 0.3s;
   color:#ff0f5b;
-  word-break: break-word; /* biar teks panjang tetap muat */
+  word-break: break-word;
 }
 
 li.completed {
@@ -118,7 +127,7 @@ li .toggleBtn:hover { background: #ff0f5b; }
 li .delBtn { background: #ff0f5b; color: #111; }
 li .delBtn:hover { background: #ff3366; }
 
-/* Tombol toggle tema */
+/* 🔹 Tombol toggle tema */
 .theme-toggle {
   position: fixed;
   top: 20px;
@@ -139,7 +148,7 @@ li .delBtn:hover { background: #ff3366; }
   background: rgba(0, 240, 255, 0.1);
 }
 
-/* Mode terang */
+/* 🔹 Mode terang */
 body.light {
   background: #f2f2f2;
   color: #f2f2f2;
@@ -167,10 +176,17 @@ body.light li.completed {color:#111;border-color: #111;box-shadow: 0 0 10px #111
   .box {
     padding: 20px;
   }
+
+  .input-group {
+    flex-direction: column;  /* input di atas, tombol di bawah */
+  }
+
   #taskInput, #addBtn {
+    width: 100%;
     font-size: 14px;
     padding: 8px 12px;
   }
+
   li {
     font-size: 14px;
     padding: 8px 10px;
@@ -194,7 +210,7 @@ body.light li.completed {color:#111;border-color: #111;box-shadow: 0 0 10px #111
 /* Desktop besar (≥1200px) */
 @media (min-width: 1200px) {
   .box {
-    max-width: 600px;  /* tetap compact */
+    max-width: 600px;
   }
   #taskInput, #addBtn {
     font-size: 16px;
