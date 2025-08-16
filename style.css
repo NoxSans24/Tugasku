@@ -78,8 +78,8 @@ body {
 }
 
 #addBtn:hover {
-  background: #ff0f5b;
-  color: #111;
+  background: #111;
+  color: #ff0f5b;
   box-shadow: 0 0 20px #ff0f5b;
 }
 
@@ -157,6 +157,7 @@ body.light {
 body.light .box { background: #fff; box-shadow: 0 0 20px #00bfff inset; }
 body.light #taskInput { background: #f5f5f5; color: #00bfff; border-color: #00bfff; }
 body.light #addBtn { background:#00bfff;color: #fff; border-color: #fff;box-shadow: 0 0 5px #00bfff inset;}
+body.light #addBtn:hover { background:#fff;color: #00bfff; border-color: #00bfff;box-shadow: 0 0 5px #fff inset;}
 body.light li { border-color: #00bfff; box-shadow: 0 0 10px #00bfff inset; color:#00bfff}
 body.light .theme-toggle {color: #00bfff ;border: 2px solid #00bfff;}
 body.light .login-title i { color: #00bfff; text-shadow: 0 0 10px #00bfff;}
