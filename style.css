@@ -121,11 +121,11 @@ li button {
   box-shadow: 0 0 5px #ff0f5b;
 }
 
-li .toggleBtn { background: #ff0f5b; color: #111; margin-right: 5px; }
-li .toggleBtn:hover { background: #ff0f5b; }
+li .toggleBtn { background: #ff0f5b; color: #111; margin-right: 5px; cursor: pointer; }
+li .toggleBtn:hover { background: #111;color:#ff0f5b }
 
 li .delBtn { background: #ff0f5b; color: #111; }
-li .delBtn:hover { background: #ff3366; }
+li .delBtn:hover { background: #111;color:#ff0f5b}
 
 /* 🔹 Tombol toggle tema */
 .theme-toggle {
@@ -166,8 +166,8 @@ body.light #taskInput::placeholder { color: #00bfff; }
 body.light .login-title{color: #00bfff;text-shadow: 0 0 10px #00bfff;}
 body.light li .toggleBtn { background: #00bfff; color: #f2f2f2; margin-right: 5px;box-shadow: 0 0 5px #00bfff inset; }
 body.light li .delBtn { background: #00bfff; color: #fff; box-shadow: 0 0 5px #00bfff inset;}
-body.light li .toggleBtn:hover { background: #00bfff; box-shadow: 0 0 5px #00bfff inset;}
-body.light li .delBtn:hover { background: #00bfff; box-shadow: 0 0 5px #00bfff inset;}
+body.light li .toggleBtn:hover { background: #fff;color:#00bfff}
+body.light li .delBtn:hover { background: #fff;color:#00bfff}
 body.light li.completed {color:#111;border-color: #111;box-shadow: 0 0 10px #111 inset;}
 
 /* 🔹 Responsif */
